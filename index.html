@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dog Collection — Pawcraft</title>
-  <meta name="description" content="Meet the loyal companions in your pack and discover every dog's story, stats, and DNA.">
+  <title>Dog Collection — PawPacks</title>
+  <meta name="description" content="Collect loyal dogs, open crates with Bones, and discover every companion's story, stats, and DNA.">
   <meta name="theme-color" content="#081712">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/labrador.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,29 +19,53 @@
 
   <div class="app">
     <header class="topbar">
-      <a class="brand" href="#/" aria-label="Pawcraft Dog Collection home">
+      <a class="brand" href="#/" aria-label="PawPacks home">
         <span class="brand-mark">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13.5c-3.6 0-6.5 2.4-6.5 5.2 0 1.7 1.4 2.8 3.1 2.6 1.2-.2 2.1-.8 3.4-.8s2.2.6 3.4.8c1.7.2 3.1-.9 3.1-2.6 0-2.8-2.9-5.2-6.5-5.2Z"/><ellipse cx="6.2" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="17.8" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="9.5" cy="5.2" rx="2.2" ry="2.9"/><ellipse cx="14.5" cy="5.2" rx="2.2" ry="2.9"/></svg>
         </span>
         <span class="brand-copy">
-          <span class="brand-kicker">Pawcraft</span>
+          <span class="brand-kicker">PawPacks</span>
           <span class="brand-name">Dog Collection</span>
         </span>
       </a>
 
-      <div class="topbar-count" aria-label="1 companion collected">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13.5c-3.6 0-6.5 2.4-6.5 5.2 0 1.7 1.4 2.8 3.1 2.6 1.2-.2 2.1-.8 3.4-.8s2.2.6 3.4.8c1.7.2 3.1-.9 3.1-2.6 0-2.8-2.9-5.2-6.5-5.2Z"/><ellipse cx="6.2" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="17.8" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="9.5" cy="5.2" rx="2.2" ry="2.9"/><ellipse cx="14.5" cy="5.2" rx="2.2" ry="2.9"/></svg>
-        <span><strong id="collected-count">1</strong> collected</span>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a class="topnav-link" href="#/" data-nav="collection">
+          <svg class="nav-icon nav-paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13.5c-3.6 0-6.5 2.4-6.5 5.2 0 1.7 1.4 2.8 3.1 2.6 1.2-.2 2.1-.8 3.4-.8s2.2.6 3.4.8c1.7.2 3.1-.9 3.1-2.6 0-2.8-2.9-5.2-6.5-5.2Z"/><ellipse cx="6.2" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="17.8" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="9.5" cy="5.2" rx="2.2" ry="2.9"/><ellipse cx="14.5" cy="5.2" rx="2.2" ry="2.9"/></svg>
+          <span>Collection</span>
+        </a>
+        <a class="topnav-link" href="#/crates" data-nav="crates">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <span>Crates</span>
+        </a>
+      </nav>
+
+      <div class="topbar-meta">
+        <div class="bone-pill" aria-label="300 Bones">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg>
+          <strong id="bone-balance">300</strong>
+          <span class="bone-word">Bones</span>
+        </div>
+        <div class="topbar-count" aria-label="1 companion collected">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13.5c-3.6 0-6.5 2.4-6.5 5.2 0 1.7 1.4 2.8 3.1 2.6 1.2-.2 2.1-.8 3.4-.8s2.2.6 3.4.8c1.7.2 3.1-.9 3.1-2.6 0-2.8-2.9-5.2-6.5-5.2Z"/><ellipse cx="6.2" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="17.8" cy="9.4" rx="2.1" ry="2.7"/><ellipse cx="9.5" cy="5.2" rx="2.2" ry="2.9"/><ellipse cx="14.5" cy="5.2" rx="2.2" ry="2.9"/></svg>
+          <span><strong id="collected-count">1</strong><span class="count-label"> collected</span></span>
+        </div>
+        <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Sound on" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
       </div>
     </header>
 
     <main id="view" tabindex="-1"></main>
 
     <footer class="site-footer">
-      <span class="footer-brand">Pawcraft Kennel <span>•</span> Est. 2026</span>
-      <span class="footer-note">Portrait of a Labrador by Dktue · CC0</span>
+      <span class="footer-brand">PawPacks <span>•</span> Est. 2026</span>
+      <span class="footer-note">Portraits: Dktue, Karen Arnold, Huoadg5888 · CC0</span>
     </footer>
   </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="pack-overlay" class="pack-overlay" hidden></div>
 
   <script src="app.js" defer></script>
 </body>
